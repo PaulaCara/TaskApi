@@ -1,0 +1,34 @@
+<h1>Listing Settlements</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Merchant reference</th>
+    <th>Status</th>
+    <th>Customer payout</th>
+    <th>Customer currency</th>
+    <th>Merchant settlement currency</th>
+    <th>Merchant settlement amount</th>
+    <th colspan="1"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @settlements.each do |settlement| %>
+      <tr>
+        <td><%= settlement.merchant_ref %></td>
+        <td><%= settlement.status %></td>
+        <td><%= settlement.customer_payout %></td>
+        <td><%= settlement.customer_currency %></td>
+        <td><%= settlement.merchant_settlement_currency %></td>
+        <td><%= settlement.merchant_settlement_amount %></td>
+        <td>
+          <%= form_tag url_for(:controller => 'tickets', :action => 'create'), method: :post do %>
+              <%= hidden_field_tag :id, settlement.id %>
+              <%= hidden_field_tag :pool_id, settlement.pool_id %>
+              <div><%= submit_tag 'Get ticket' %></div>
+          <% end %>
+          </tr>
+  <% end %>
+  </tbody>
+</table>

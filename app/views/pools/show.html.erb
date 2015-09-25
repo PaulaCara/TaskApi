@@ -1,0 +1,22 @@
+<%= link_to 'Back', pools_path %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pool.name %>
+</p>
+
+<p>
+  <strong>Headline Prize:</strong>
+  <%= @pool.headline_prize %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @pool.status %>
+</p>
+
+<td><%= link_to 'Settlement', settlements_pool_path(@pool.id) %></td>
+
+<td><%= link_to 'Smart Pick', smart_pick_pool_path(@pool.id), :remote => true %></td>
+<div id="smart-pick">
+</div>

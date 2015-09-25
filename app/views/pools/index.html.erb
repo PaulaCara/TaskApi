@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pools</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Headline prize</th>
+    <th>Status</th>
+    <th colspan="1"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @pools.each do |pool| %>
+      <tr>
+        <td><%= pool.name %></td>
+        <td><%= pool.headline_prize %></td>
+        <td><%= pool.status %></td>
+        <td><%= link_to 'Details', pool %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

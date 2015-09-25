@@ -1,0 +1,21 @@
+I am well aware that the app needs further improvement (tests, looks and hardcoded code) and it has quite a few rough edges
+
+Regarding the Session API:
+  * I kept receiving 401 status for PUT /v2/sessions request even if I attached the correct header and parameter.
+  * I have developed and commented the logic for session management.
+
+Regarding the Pools API:
+  * I'm not sure that I've understood completly the business logic, but after getting a settlement, I used that object
+  to buy a new ticket. If I had more time to develop this feature, I would have used a form for some of the
+  user's input (such as selections, stake, currency or poc).
+
+
+About the features:
+    * see all the pools
+    * see more detailes about a single pool
+    * access 'Smart Pick' for a single pool
+    * see all settlements for a single pool
+    * buy a new ticket (using the data from pool and settlements)
+
+In order to have completed the task, I should have:
+    * Add test scripts to check the models and controllers
