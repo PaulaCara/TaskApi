@@ -7,14 +7,10 @@ class ApplicationController < ActionController::Base
   before_filter :current_token?
   helper_method :current_token
 
-  def current_token
-    session[:access_token]
-  end
-
   private
 
   def current_token?
-    create_token if session[:access_token]
+    create_token
 
     # I kept receiving 401 status for PUT /v2/sessions request even if I attached
     # the correct header and parameter.
