@@ -31,8 +31,9 @@ class ApplicationController < ActionController::Base
   end
 
   def create_token
+    puts 'about to create session'
     @session = Session.new(api_key: 'KklyUtXD7NQb8oIYQDMBDw', api_secret: 'password')
-
+    puts 'created session'
     if @session.save
       session[:access_token] = @session.access_token
       session[:refresh_token] = @session.refresh_token

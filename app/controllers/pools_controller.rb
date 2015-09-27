@@ -3,7 +3,9 @@ class PoolsController < ApplicationController
 
   # GET /pools
   def index
+    puts 'about to get pools'
     @pools = Pool.all(params: { ungrouped: true })
+    puts 'pools'
   end
 
   # GET /pools/:id
