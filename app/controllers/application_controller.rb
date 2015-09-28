@@ -18,17 +18,14 @@ class ApplicationController < ActionController::Base
     #   Session.headers['Authorization'] = session[:access_token]
     #   Session.all # GET /v2/sessions
     #
+    # rescue ActiveResource::UnauthorizedAccess
     #   session[:access_token] ? update_token : create_token
-    # rescue ActiveResource::ResourceNotFound
-    #   flash[:error] = "The pool isn't found"
-    #   redirect_to :back
     # end
   end
 
   def create_token
-    puts 'about to create session'
     @session = Session.new(api_key: 'KklyUtXD7NQb8oIYQDMBDw', api_secret: 'password')
-    puts 'created session'
+
     if @session.save
       session[:access_token] = @session.access_token
       session[:refresh_token] = @session.refresh_token

@@ -1,4 +1,4 @@
-I am well aware that the app needs further improvement (tests, looks and hardcoded code) and it has quite a few rough edges
+I am well aware that the app needs further improvement (tests, looks and some hardcoded) and it has quite a few rough edges wich need further 'polishing'.
 
 Regarding the Session API:
   * I kept receiving 401 status for PUT /v2/sessions request even if I attached the correct header and parameter.
@@ -8,6 +8,9 @@ Regarding the Pools API:
   * I'm not sure that I've understood completly the business logic, but after getting a settlement, I used that object
   to buy a new ticket. If I had more time to develop this feature, I would have used a form for some of the
   user's input (such as selections, stake, currency or poc).
+
+Regarding the Tickets API:
+  * I could find only one settlement for which I could buy a ticket, therefore I hardcoded some data in order to buy it.
 
 
 About the features:
@@ -19,3 +22,4 @@ About the features:
 
 In order to have completed the task, I should have:
     * Add test scripts to check the models and controllers
+    * Add i18n
