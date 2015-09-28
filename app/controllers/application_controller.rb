@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   private
 
   def current_token?
-    create_token if session[:access_token]
+    create_token # this enables the site to work at all times, as the below code is not currently working
 
     # I kept receiving 401 status for PUT /v2/sessions request even if I attached
     # the correct header and parameter.
